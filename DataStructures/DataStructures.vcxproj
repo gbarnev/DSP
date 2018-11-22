@@ -135,11 +135,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\ArrayStack.cpp" />
-    <ClCompile Include="src\LinkedStack.cpp" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="src\ArrayQueue.h" />
     <ClInclude Include="src\ArrayStack.h" />
+    <ClInclude Include="DataStructures.h" />
+    <ClInclude Include="src\LinkedQueue.h" />
     <ClInclude Include="src\LinkedStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

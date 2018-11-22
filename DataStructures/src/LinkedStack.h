@@ -1,10 +1,5 @@
 #pragma once
-
-#ifdef MAKEDLL
-#  define DLLEXPORT __declspec(dllexport)
-#else
-#  define DLLEXPORT __declspec(dllimport)
-#endif
+#include "../DataStructures.h"
 
 namespace DSP {
 
@@ -80,17 +75,17 @@ namespace DSP {
 
 		void copyStack(const LinkedStack<T>& other)
 		{
-			this->len = other.len;
+			len = other.len;
 
 			if (other.empty()) {
-				this->start = nullptr;
+				start = nullptr;
 				return;
 			}
 
-			this->start = new Node;
-			this->start->data = other.start->data;
+			start = new Node;
+			start->data = other.start->data;
 
-			Node* currThis = this->start;
+			Node* currThis = start;
 			Node* tmpOther = other.start->link;
 
 			while (tmpOther != nullptr) {

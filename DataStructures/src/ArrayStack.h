@@ -1,15 +1,9 @@
 #pragma once
-
-#ifdef MAKEDLL
-#  define DLLEXPORT __declspec(dllexport)
-#else
-#  define DLLEXPORT __declspec(dllimport)
-#endif
+#include "../DataStructures.h"
 
 namespace DSP {
 
 	const int MAXSIZE = 200;
-
 	template <typename T = int>
 	class DLLEXPORT ArrayStack
 	{
@@ -92,9 +86,9 @@ namespace DSP {
 
 		void copyStack(const ArrayStack<T>& other)
 		{
-			this->stack_size = other.stack_size;
-			this->stack_top = other.stack_top;
-			this->arr = new T[other.stack_size];
+			stack_size = other.stack_size;
+			stack_top = other.stack_top;
+			arr = new T[other.stack_size];
 
 			for (int i = 0; i < stack_size; i++) {
 				arr[i] = other.arr[i];
