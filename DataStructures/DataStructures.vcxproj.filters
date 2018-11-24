@@ -11,20 +11,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\LinkedQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArrayQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="src\ArrayStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\LinkedStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ArrayQueue.h">
+    <ClInclude Include="src\DataStructures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\LinkedQueue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DataStructures.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

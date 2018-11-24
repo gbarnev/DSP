@@ -1,17 +1,16 @@
 #pragma once
-#include "../DataStructures.h"
 
 namespace DSP {
 
-	const int MAXSIZE = 200;
+	namespace ArrStackConsts { const int MAXSIZE = 200; }
 	template <typename T = int>
-	class DLLEXPORT ArrayStack
+	class ArrayStack
 	{
 	public:
-		ArrayStack(int size = MAXSIZE)
+		ArrayStack(int size = ArrStackConsts::MAXSIZE)
 			: stack_size(size), stack_top(-1), arr(nullptr)
 		{
-			if (size <= 0) stack_size = MAXSIZE;
+			if (size <= 0) stack_size = ArrStackConsts::MAXSIZE;
 			arr = new T[stack_size];
 		}
 

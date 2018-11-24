@@ -1,10 +1,9 @@
 #pragma once
-#include "../DataStructures.h"
 
 namespace DSP {
 
 	template <typename T = int>
-	class DLLEXPORT LinkedQueue
+	class LinkedQueue
 	{
 	public:
 		LinkedQueue()
@@ -15,7 +14,7 @@ namespace DSP {
 			deleteQueue();
 		}
 
-		LinkedQueue(const LinkedQueue<T>& other)
+		LinkedQueue(const LinkedQueue<T>& other) : LinkedQueue()
 		{
 			copyQueue(other);
 		}
@@ -56,18 +55,23 @@ namespace DSP {
 			if (empty())
 				throw std::out_of_range("underflow");
 
-			T* cur = front;
+			Node* cur = front;
 
 			if (front == rear)
-				front = rear = nullptr;
+			{
+				front = nullptr;
+				rear = nullptr;
+			}
 			else
+			{
 				front = front->link;
+			}
 			
 			delete cur;
 			--len;
 		}
 
-		T& top() const
+		T& head() const
 		{
 			if (empty())
 				throw std::out_of_range("empty");
@@ -82,14 +86,15 @@ namespace DSP {
 			Node* link;
 		};
 
-		Node* front, rear;
+		Node* front;
+		Node* rear;
 		int len;
 
 		void copyQueue(const LinkedQueue<T>& other)
 		{
 			front = rear = nullptr;
 			Node* cur = other.front;
-			while (curr != nullptr)
+			while (cur != nullptr)
 			{
 				push(cur->data);
 				cur = cur->link;
@@ -98,10 +103,8 @@ namespace DSP {
 
 		void deleteQueue()
 		{
-			Node* temp;
 			while (!empty())
 			{
-				temp = top();
 				pop();
 			}
 		}

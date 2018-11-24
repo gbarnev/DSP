@@ -1,10 +1,9 @@
 #pragma once
-#include "../DataStructures.h"
 
 namespace DSP {
 
 	template <typename T = int>
-	class DLLEXPORT LinkedStack
+	class LinkedStack
 	{
 	public:
 		LinkedStack()

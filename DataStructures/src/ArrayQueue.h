@@ -1,16 +1,16 @@
 #pragma once
-#include "../DataStructures.h"
 
 namespace DSP
 {
-	const int MAXSIZE = 20;
+	namespace ArrQueueConsts { const int MAXSIZE = 20; }
 	template <typename T = int>
-	class DLLEXPORT ArrayQueue
+	class ArrayQueue
 	{
 	public:
-		ArrayQueue(int maxSize = MAXSIZE)
-			: front(0), rear(0), maxLen(maxSize), curSize(0), data(nullptr)
+		ArrayQueue(int maxSize = ArrQueueConsts::MAXSIZE)
+			: front(0), rear(0), maxLen(maxSize), len(0), data(nullptr)
 		{
+			if (maxSize <= 0) maxLen = ArrStackConsts::MAXSIZE;
 			data = new T[maxSize];
 		}
 
