@@ -149,6 +149,7 @@
     <ClInclude Include="src\DataStructures.h" />
     <ClInclude Include="src\LinkedQueue.h" />
     <ClInclude Include="src\LinkedStack.h" />
+    <ClInclude Include="src\StackExamples.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ListExamples.h" />
