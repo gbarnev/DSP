@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\LinkedList.h" />
     <ClInclude Include="src\ArrayQueue.h" />
     <ClInclude Include="src\ArrayStack.h" />
     <ClInclude Include="src\DataStructures.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="src\LinkedStack.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ListExamples.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

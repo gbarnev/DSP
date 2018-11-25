@@ -1,4 +1,5 @@
 #include "DataStructures.h"
+#include "ListExamples.cpp"
 #include <iostream>
 using namespace DSP;
 using namespace std;
@@ -14,19 +15,40 @@ void printQueue(LinkedQueue<T> queue)
 	cout << endl; 
 }
 
+template <typename T>
+void printList(LinkedList<T> list)
+{
+
+	for (auto i = list.begin(); i != list.end(); ++i)
+	{
+		cout << *i << ' ';
+	}
+	cout << endl;
+}
+
 
 int main(int argc, char** argv)
 {
-	LinkedQueue<int> myQueue = LinkedQueue<int>();
-	myQueue.push(3);
-	myQueue.push(43);
-	myQueue.push(1);
-	myQueue.push(5);
-	myQueue.push(12);
-	myQueue.push(15);
-	myQueue.push(2);
-	myQueue.push(35);
-	myQueue.push(21);
-	printQueue(myQueue);
+	LinkedList<int> myList = LinkedList<int>();
+	myList.push_back(3);
+	myList.push_back(43);
+	myList.push_back(1);
+	myList.push_back(5);
+	myList.push_back(12);
+	myList.push_back(15);
+	myList.push_front(2);
+	myList.push_back(35);
+	myList.push_back(21);
+
+	LinkedList<int> myListCpy = myList;
+	myListCpy.insert((++(++(++myListCpy.begin()))), 999);
+	myListCpy.erase((--(--myListCpy.end())));
+
+	printList(myList);
+	printList(myListCpy);
+
+	LinkedList<int> reverse = reverseList(myList);
+	printList(reverse);
+
 	return 0;
 }
