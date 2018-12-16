@@ -1,13 +1,11 @@
-#include "DataStructures.h"
-#include "StackExamples.h"
+#include "TreeExamples.h"
 #include <iostream>
 using namespace DSP;
 using namespace std;
 
-
 int main(int argc, char** argv)
 {
-	int result = calcRevPolNot("6523+8*+3+*");
-	cout << result << endl;
+	CharTree tree = inputTree();
+
 	return 0;
 }

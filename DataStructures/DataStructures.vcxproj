@@ -143,13 +143,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\BinTree.h" />
     <ClInclude Include="src\LinkedList.h" />
     <ClInclude Include="src\ArrayQueue.h" />
     <ClInclude Include="src\ArrayStack.h" />
-    <ClInclude Include="src\DataStructures.h" />
     <ClInclude Include="src\LinkedQueue.h" />
     <ClInclude Include="src\LinkedStack.h" />
     <ClInclude Include="src\StackExamples.h" />
+    <ClInclude Include="src\TreeExamples.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ListExamples.h" />
