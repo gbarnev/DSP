@@ -48,6 +48,16 @@ namespace DSP
 			return root->data;
 		}
 
+		void insert(const T& x)
+		{
+			add(root, x);
+		}
+
+		void remove(const T& x)
+		{
+			root = remove(root, x);
+		}
+
 		BinTree<T> leftTree() const
 		{
 			BinTree<T> res;
@@ -98,7 +108,65 @@ namespace DSP
 			delete curr;
 			curr = nullptr;
 		}
+
+		void add(Node*& root, const T& elem)
+		{
+			if (!root)
+			{
+				root = new Node{ elem, nullptr, nullptr };
+			}
+			else
+			{
+				if (root->data < elem)
+					add(root->right, elem);
+				else
+					add(root->left, elem);
+			}
+		}
+
+		T removeMinElem(Node* r oot)
+		{
+			Node* cur = root;
+			Node* prev = root;
+			while (cur->left != nullptr)
+			{
+				prev = cur;
+				cur = cur->left;
+			}
+			T minElem = cur->data;
+			prev->left = nullptr;
+			delete cur;
+			return minElem;
+		}
+
+		Node* remove(Node* node, const T& elem)
+		{
+			if (!node) return node;
+			if (node->data == elem && !node->left) {
+				Node* right = node->right;
+				delete node;
+				return right;
+			}
+			if (node->data == elem && !node->right) {
+				Node* left = node->left;
+				delete node;
+				return left;
+			}
+			if (node->data == elem)
+			{
+				node->data = removeMinElem(node->right);
+				return node;
+			}
+
+			if (node->data < elem)
+			{
+				node->right = remove(node->right, elem);
+			}
+			else
+			{
+				node->left = remove(node->left, elem);
+			}
+			return node;
+		}
 	};
 }
-
-
