@@ -1,3 +1,3 @@
 # Data Structures
 
-This is a simple implementation of common data structures in C++.
+This is a simple implementation and example usages of common data structures in C++.
